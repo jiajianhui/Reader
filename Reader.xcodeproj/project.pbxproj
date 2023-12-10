@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871AC70E2B25A91700A1872E /* CheckInDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AC70D2B25A91700A1872E /* CheckInDetail.swift */; };
 		87221E222B1EE00F005B2BDB /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221E212B1EE00F005B2BDB /* Detail.swift */; };
 		87221E242B1F0037005B2BDB /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221E232B1F0037005B2BDB /* Setting.swift */; };
 		87221E282B1F05EC005B2BDB /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221E272B1F05EC005B2BDB /* Vibration.swift */; };
@@ -24,6 +25,10 @@
 		8799509C2B23017500D414E5 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 8799509B2B23017500D414E5 /* ImagePickerView */; };
 		879DB9172B2402F70098B408 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879DB9162B2402F70098B408 /* LocationManager.swift */; };
 		879DB9192B240CA00098B408 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879DB9182B240CA00098B408 /* CheckIn.swift */; };
+		87A2A0662B2449CF004E5438 /* Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A2A0642B2449CF004E5438 /* Reader.xcdatamodeld */; };
+		87A2A0682B244A71004E5438 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2A0672B244A71004E5438 /* CloudData.swift */; };
+		87A2A06A2B2458E6004E5438 /* CheckInRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2A0692B2458E6004E5438 /* CheckInRow.swift */; };
+		87A2A06C2B24A963004E5438 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2A06B2B24A963004E5438 /* TimeView.swift */; };
 		87C48D1B2B21B33A00C2BF86 /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C48D1A2B21B33A00C2BF86 /* AddNote.swift */; };
 		87C48D1D2B220A1800C2BF86 /* TextEditorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C48D1C2B220A1800C2BF86 /* TextEditorStyle.swift */; };
 		87F7BF802B2057C20035D28E /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 87F7BF7F2B2057C20035D28E /* BetterSafariView */; };
@@ -32,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		871AC70D2B25A91700A1872E /* CheckInDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInDetail.swift; sourceTree = "<group>"; };
 		87221E212B1EE00F005B2BDB /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		87221E232B1F0037005B2BDB /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		87221E272B1F05EC005B2BDB /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
@@ -50,6 +56,10 @@
 		873D80712B1E1D5600B4E4C2 /* TabReadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabReadData.swift; sourceTree = "<group>"; };
 		879DB9162B2402F70098B408 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		879DB9182B240CA00098B408 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		87A2A0652B2449CF004E5438 /* CheckInModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheckInModel.xcdatamodel; sourceTree = "<group>"; };
+		87A2A0672B244A71004E5438 /* CloudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
+		87A2A0692B2458E6004E5438 /* CheckInRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInRow.swift; sourceTree = "<group>"; };
+		87A2A06B2B24A963004E5438 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		87C48D1A2B21B33A00C2BF86 /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
 		87C48D1C2B220A1800C2BF86 /* TextEditorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorStyle.swift; sourceTree = "<group>"; };
 		87F7BF812B2161FF0035D28E /* TabNoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNoteData.swift; sourceTree = "<group>"; };
@@ -75,6 +85,8 @@
 				873D80712B1E1D5600B4E4C2 /* TabReadData.swift */,
 				87F7BF812B2161FF0035D28E /* TabNoteData.swift */,
 				879DB9162B2402F70098B408 /* LocationManager.swift */,
+				87A2A0642B2449CF004E5438 /* Reader.xcdatamodeld */,
+				87A2A0672B244A71004E5438 /* CloudData.swift */,
 			);
 			path = "Model & ViewModel";
 			sourceTree = "<group>";
@@ -85,8 +97,11 @@
 				873D80632B1E1BDD00B4E4C2 /* Master.swift */,
 				87221E362B201FE2005B2BDB /* Reading.swift */,
 				879DB9182B240CA00098B408 /* CheckIn.swift */,
+				87A2A06B2B24A963004E5438 /* TimeView.swift */,
 				87F7BF832B21710E0035D28E /* ---- */,
 				87221E212B1EE00F005B2BDB /* Detail.swift */,
+				871AC70D2B25A91700A1872E /* CheckInDetail.swift */,
+				87A2A0692B2458E6004E5438 /* CheckInRow.swift */,
 				87C48D1A2B21B33A00C2BF86 /* AddNote.swift */,
 				87C48D1C2B220A1800C2BF86 /* TextEditorStyle.swift */,
 				87F7BF842B2171800035D28E /* AddNoteAndNoteList.swift */,
@@ -232,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871AC70E2B25A91700A1872E /* CheckInDetail.swift in Sources */,
 				87221E282B1F05EC005B2BDB /* Vibration.swift in Sources */,
 				873D80642B1E1BDD00B4E4C2 /* Master.swift in Sources */,
 				879DB9192B240CA00098B408 /* CheckIn.swift in Sources */,
@@ -240,12 +256,16 @@
 				879DB9172B2402F70098B408 /* LocationManager.swift in Sources */,
 				87221E392B20254F005B2BDB /* RoundButton.swift in Sources */,
 				87221E242B1F0037005B2BDB /* Setting.swift in Sources */,
+				87A2A06C2B24A963004E5438 /* TimeView.swift in Sources */,
 				873D80702B1E1CD200B4E4C2 /* Row.swift in Sources */,
+				87A2A0662B2449CF004E5438 /* Reader.xcdatamodeld in Sources */,
 				87F7BF822B2161FF0035D28E /* TabNoteData.swift in Sources */,
 				873D80622B1E1BDD00B4E4C2 /* ReaderApp.swift in Sources */,
+				87A2A0682B244A71004E5438 /* CloudData.swift in Sources */,
 				87F7BF852B2171800035D28E /* AddNoteAndNoteList.swift in Sources */,
 				873D80722B1E1D5600B4E4C2 /* TabReadData.swift in Sources */,
 				87C48D1D2B220A1800C2BF86 /* TextEditorStyle.swift in Sources */,
+				87A2A06A2B2458E6004E5438 /* CheckInRow.swift in Sources */,
 				87221E372B201FE2005B2BDB /* Reading.swift in Sources */,
 				87221E2A2B1F1977005B2BDB /* MotionManager.swift in Sources */,
 				87C48D1B2B21B33A00C2BF86 /* AddNote.swift in Sources */,
@@ -487,6 +507,19 @@
 			productName = BetterSafariView;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		87A2A0642B2449CF004E5438 /* Reader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87A2A0652B2449CF004E5438 /* CheckInModel.xcdatamodel */,
+			);
+			currentVersion = 87A2A0652B2449CF004E5438 /* CheckInModel.xcdatamodel */;
+			path = Reader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 873D80562B1E1BDD00B4E4C2 /* Project object */;
 }

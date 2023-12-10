@@ -16,6 +16,13 @@ struct ReaderApp: App {
     //判断是否显示页面
     @State var locked = true
     
+    let motionManager = MotionManager()
+    
+    let locationManager = LocationManager()
+    
+    //1、 向数据库新增内容之前，必须能访问数据库，创建CloudData实体
+    let CloudDataManager = CloudData.shared
+    
     var body: some Scene {
         WindowGroup {
             Group {
@@ -25,7 +32,7 @@ struct ReaderApp: App {
                 } else {
                     TabView {
                         Master()
-                            .environmentObject(MotionManager())
+                            .environmentObject(motionManager)
                             .tabItem {
                                 Image(systemName: "list.star")
                                 Text("编辑推荐")
@@ -36,12 +43,14 @@ struct ReaderApp: App {
                                 Text("阅读笔记")
                             }
                         CheckIn()
+                            .environmentObject(locationManager)
+                            //2、 只有该视图需要这个实体，将其传递给它
+                            .environment(\.managedObjectContext, CloudDataManager.container.viewContext)
                             .tabItem {
-                                Image(systemName: "location")
-                                Text("签到")
+                                Image(systemName: "mappin.and.ellipse")
+                                Text("打卡签到")
                             }
                     }
-                    .background(Material.ultraThick)
                 }
             }
             .onAppear {

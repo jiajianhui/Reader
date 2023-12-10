@@ -38,15 +38,17 @@ struct Reading: View {
                     }
                     
                 }
+                
                 .onDelete(perform: delete)
             }
             .listStyle(.plain)
             .navigationTitle("阅读笔记")
             .toolbar {
                 Button {
+                    Vibration.selection.vibration()
                     showSheet.toggle()
                 } label: {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.circle.fill")
                 }
 
             }

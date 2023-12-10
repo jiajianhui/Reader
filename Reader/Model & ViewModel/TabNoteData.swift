@@ -82,7 +82,7 @@ class TabNoteData: ObservableObject {
         //Data(contentsOf: url)用于读取指定URL的数据并将其转换为Data对象；适用于读取本地文件，获取网络时，推荐使用URLSession
         let imageData = try! Data(contentsOf: url)  //判断链接中是否有数据
         
-        return UIImage(data: imageData, scale: 1)! //通过UIImage自带的初始化器创建图片，scale指的是缩放倍率（必须大于等于1）
+        return UIImage(data: imageData, scale: 1) ?? UIImage() //通过UIImage自带的初始化器创建图片，scale指的是缩放倍率（必须大于等于1）
     }
     
     //存储图片
