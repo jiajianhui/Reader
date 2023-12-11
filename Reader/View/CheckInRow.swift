@@ -13,9 +13,9 @@ struct CheckInRow: View {
     
     @State var region: MKCoordinateRegion
     var date: String
+    var city: String
     
     @EnvironmentObject var locationManager: LocationManager
-    @State var city: String = ""
     
     var body: some View {
         HStack {
@@ -31,16 +31,17 @@ struct CheckInRow: View {
                     .font(.title3)
             }
         }
-        .onAppear {
-            locationManager.lookUpCurrentLocation(
-                //将坐标转为CLLocation类型
-                location: CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
-            )
-            { placemark in
-                //将获得的城市信息赋值给city
-                city = placemark?.locality ?? ""
-            }
-        }
+        //使用该方法后，快速滚动签到列表时会导致API请求过于频繁，导致API限流；将city数据存储在CoreData数据库中解决此问题
+//        .onAppear {
+//            locationManager.lookUpCurrentLocation(
+//                //将坐标转为CLLocation类型
+//                location: CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
+//            )
+//            { placemark in
+//                //将获得的城市信息赋值给city
+//                city = placemark?.locality ?? ""
+//            }
+//        }
     }
 }
 
@@ -57,6 +58,6 @@ struct CheckInRow_Previews: PreviewProvider {
                     longitudeDelta: 0.01
                 )
             ),
-            date: "日期")
+            date: "日期", city: "北京")
     }
 }

@@ -54,7 +54,9 @@ struct CheckIn: View {
                                     longitudeDelta: 0.01
                                 )
                             ),
-                            date: displayDate(checkIn.timestamp!))
+                            date: displayDate(checkIn.timestamp!),
+                            city: checkIn.city ?? ""
+                        )
                     }
                 }
                 .onDelete(perform: removeCheckIn)
@@ -86,6 +88,13 @@ struct CheckIn: View {
         new.timestamp = Date()
         new.longitude = locationManager.region.center.longitude
         new.latitude = locationManager.region.center.latitude
+        locationManager.lookUpCurrentLocation(
+            location: CLLocation(
+                latitude: locationManager.region.center.latitude,
+                longitude: locationManager.region.center.longitude)
+        ) { placemark in
+            new.city = placemark?.locality ?? ""
+        }
         try? viewContext.save()
 //        print(locationManager.region.center.longitude)
 //        print(new)
