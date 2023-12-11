@@ -16,7 +16,7 @@ import MapKit  //让位置信息通过SwiftUI显示出来
 //遵循CLLocationManagerDelegate让数据保持更新，该协议包括一个数据更新时需要做什么的函数 locationManager(_: didUpdateLocations:)
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
-    //1、 框架中介
+    //1、 框架中介，方便启动时调用
     let locationManager = CLLocationManager()  //中介——CLLocationManager
     
     //2、 经纬度；由MapKit接管
@@ -57,6 +57,25 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 longitudeDelta: 0.01
             )
         )
+    }
+    
+    
+    //将坐标转为地名
+    func lookUpCurrentLocation(location: CLLocation, completionHandler: @escaping (CLPlacemark?) -> Void ) {
+        // Use the last reported location.
+        let geocoder = CLGeocoder()
+            
+        // Look up the location and pass it to the completion handler
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+            if error == nil {
+                let firstLocation = placemarks?[0]
+                completionHandler(firstLocation)
+            }
+            else {
+             // An error occurred during geocoding.
+                completionHandler(nil)
+            }
+        })
     }
 }
 

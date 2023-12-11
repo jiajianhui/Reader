@@ -54,7 +54,7 @@ struct CheckIn: View {
                                     longitudeDelta: 0.01
                                 )
                             ),
-                            date: "日期")
+                            date: displayDate(checkIn.timestamp!))
                     }
                 }
                 .onDelete(perform: removeCheckIn)
@@ -96,6 +96,25 @@ struct CheckIn: View {
         atOffSets.map { checkIns[$0] }.forEach(viewContext.delete(_:))
         try? viewContext.save()
     }
+    
+    //定义时间显示格式
+    let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+            formatter.locale = Locale(identifier: "zh_Hans")
+            formatter.setLocalizedDateFormatFromTemplate("MMMMdd")
+            return formatter
+    }()
+    
+    //将时间转换为文本的函数
+    func displayDate(_ date: Date) -> String {
+        dateFormatter.string(from: date)
+    }
+    
+    
+    
+    
 }
 
 struct CheckIn_Previews: PreviewProvider {
