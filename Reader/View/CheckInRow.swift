@@ -11,9 +11,12 @@ import MapKit
 
 struct CheckInRow: View {
     
-    @State var region: MKCoordinateRegion
+    @State var region: MKCoordinateRegion  //因为Map需要绑定的参数。所以要用State
     var date: String
     var city: String
+    var subCity: String
+    
+    @Binding var pickerValue: Int //接受父级传来的数据
     
     @EnvironmentObject var locationManager: LocationManager
     
@@ -27,8 +30,14 @@ struct CheckInRow: View {
                 Text(city)
                     .font(.title)
                     .fontWeight(.bold)
-                Text(date)
-                    .font(.title3)
+                HStack {
+                    Text(date)
+                        .font(.title3)
+                    if pickerValue == 1 {
+                        Text(subCity)
+                            .foregroundColor(.orange)
+                    }
+                }
             }
         }
         //使用该方法后，快速滚动签到列表时会导致API请求过于频繁，导致API限流；将city数据存储在CoreData数据库中解决此问题
@@ -58,6 +67,9 @@ struct CheckInRow_Previews: PreviewProvider {
                     longitudeDelta: 0.01
                 )
             ),
-            date: "日期", city: "北京")
+            date: "日期",
+            city: "北京",
+            subCity: "name",
+            pickerValue: .constant(0))
     }
 }

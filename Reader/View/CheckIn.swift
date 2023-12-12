@@ -26,6 +26,10 @@ struct CheckIn: View {
     //2、 该变量存储签到数据Entity
     var checkIns: FetchedResults<Entity>
     
+    //将用户选择的picker选项存起来
+    @AppStorage ("pickerValue") var pickerValue = 0
+    var pickerTitle = ["精简", "详细"]
+    
     
     var body: some View {
         NavigationView {
@@ -55,16 +59,28 @@ struct CheckIn: View {
                                 )
                             ),
                             date: displayDate(checkIn.timestamp!),
-                            city: checkIn.city ?? ""
+                            city: checkIn.locality ?? "",
+                            subCity: checkIn.subLocality ?? "",
+                            pickerValue: $pickerValue
                         )
                     }
                 }
                 .onDelete(perform: removeCheckIn)
             }
             .navigationTitle("打卡签到")
+            
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
+                }
+                ToolbarItem(placement: .principal) {
+                    Picker("picker", selection: $pickerValue) {
+                        ForEach(0..<pickerTitle.count) { index in
+                            Text(pickerTitle[index])
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal, 40)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -77,7 +93,6 @@ struct CheckIn: View {
                 }
             }
         }
-        
     }
     
     //新增签到
@@ -88,12 +103,15 @@ struct CheckIn: View {
         new.timestamp = Date()
         new.longitude = locationManager.region.center.longitude
         new.latitude = locationManager.region.center.latitude
+        
         locationManager.lookUpCurrentLocation(
+            //将坐标转为CLLocation类型
             location: CLLocation(
                 latitude: locationManager.region.center.latitude,
                 longitude: locationManager.region.center.longitude)
         ) { placemark in
-            new.city = placemark?.locality ?? ""
+            new.locality = placemark?.locality
+            new.subLocality = placemark?.subLocality
         }
         try? viewContext.save()
 //        print(locationManager.region.center.longitude)
@@ -120,9 +138,6 @@ struct CheckIn: View {
     func displayDate(_ date: Date) -> String {
         dateFormatter.string(from: date)
     }
-    
-    
-    
     
 }
 
