@@ -13,7 +13,7 @@ struct CheckInDetail: View {
     
     var body: some View {
         Map(coordinateRegion: $region)
-            .ignoresSafeArea(.all)
+            .edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -34,6 +34,7 @@ struct CheckIn: View {
     var body: some View {
         NavigationView {
             List {
+                IAP()
                 ForEach(checkIns) { checkIn in
                     NavigationLink {
                         CheckInDetail(region: MKCoordinateRegion(

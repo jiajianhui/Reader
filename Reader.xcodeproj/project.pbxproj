@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		871AC70E2B25A91700A1872E /* CheckInDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AC70D2B25A91700A1872E /* CheckInDetail.swift */; };
+		871AC7312B28A09E00A1872E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AC7302B28A09E00A1872E /* Store.swift */; };
+		871AC7332B28A1DC00A1872E /* IAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AC7322B28A1DC00A1872E /* IAP.swift */; };
 		87221E222B1EE00F005B2BDB /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221E212B1EE00F005B2BDB /* Detail.swift */; };
 		87221E242B1F0037005B2BDB /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221E232B1F0037005B2BDB /* Setting.swift */; };
 		87221E282B1F05EC005B2BDB /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221E272B1F05EC005B2BDB /* Vibration.swift */; };
@@ -38,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		871AC70D2B25A91700A1872E /* CheckInDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInDetail.swift; sourceTree = "<group>"; };
+		871AC72F2B289DFA00A1872E /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		871AC7302B28A09E00A1872E /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		871AC7322B28A1DC00A1872E /* IAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
 		87221E212B1EE00F005B2BDB /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		87221E232B1F0037005B2BDB /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		87221E272B1F05EC005B2BDB /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
@@ -143,6 +148,9 @@
 			children = (
 				87221E312B1F6AED005B2BDB /* Info.plist */,
 				873D80612B1E1BDD00B4E4C2 /* ReaderApp.swift */,
+				871AC7302B28A09E00A1872E /* Store.swift */,
+				871AC7322B28A1DC00A1872E /* IAP.swift */,
+				871AC72F2B289DFA00A1872E /* Configuration.storekit */,
 				87221E342B1F70F2005B2BDB /* FrameWork */,
 				87221E322B1F70BF005B2BDB /* Model & ViewModel */,
 				87221E332B1F70DE005B2BDB /* View */,
@@ -252,6 +260,7 @@
 				873D80642B1E1BDD00B4E4C2 /* Master.swift in Sources */,
 				879DB9192B240CA00098B408 /* CheckIn.swift in Sources */,
 				87221E2E2B1F63A7005B2BDB /* Locked.swift in Sources */,
+				871AC7312B28A09E00A1872E /* Store.swift in Sources */,
 				87221E222B1EE00F005B2BDB /* Detail.swift in Sources */,
 				879DB9172B2402F70098B408 /* LocationManager.swift in Sources */,
 				87221E392B20254F005B2BDB /* RoundButton.swift in Sources */,
@@ -268,6 +277,7 @@
 				87A2A06A2B2458E6004E5438 /* CheckInRow.swift in Sources */,
 				87221E372B201FE2005B2BDB /* Reading.swift in Sources */,
 				87221E2A2B1F1977005B2BDB /* MotionManager.swift in Sources */,
+				871AC7332B28A1DC00A1872E /* IAP.swift in Sources */,
 				87C48D1B2B21B33A00C2BF86 /* AddNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
