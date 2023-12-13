@@ -44,13 +44,17 @@ struct Reading: View {
             .listStyle(.plain)
             .navigationTitle("阅读笔记")
             .toolbar {
-                Button {
-                    Vibration.selection.vibration()
-                    showSheet.toggle()
-                } label: {
-                    Image(systemName: "plus.circle.fill")
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Drums()
                 }
-
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        Vibration.selection.vibration()
+                        showSheet.toggle()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                    }
+                }
             }
             .sheet(isPresented: $showSheet) {
                 AddNote(noteData: noteData)
