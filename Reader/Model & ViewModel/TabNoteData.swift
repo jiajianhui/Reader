@@ -53,8 +53,12 @@ class TabNoteData: ObservableObject {
         
         //2、如果文件中存在该应用的json数据，则读取该文件，并将解码数据赋值给result并返回
         if FileManager.default.fileExists(atPath: notesURL.path) {
-            let data = try! Data(contentsOf: notesURL) //读取指定URL的数据并将其转换为Data对象
-            result = try! JSONDecoder().decode([Note].self, from: data)  //解码并赋值
+//            let data = try! Data(contentsOf: notesURL) //读取指定URL的数据并将其转换为Data对象
+//            result = try! JSONDecoder().decode([Note].self, from: data)  //解码并赋值
+            
+            if let data = try? Data(contentsOf: notesURL) {
+                result = try! JSONDecoder().decode([Note].self, from: data)
+            }
         }
         
         //3、返回

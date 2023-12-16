@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Setting: View {
+struct ColorTheme: View {
     
     //接收父视图中传递来的值，无需赋值，因为该绑定变量（darkModel）的实质就是父视图中的变量（darkModel）
     @Binding var darkModel: Bool
@@ -30,7 +30,7 @@ struct Setting: View {
 
 struct Setting_Previews: PreviewProvider {
     static var previews: some View {
-        Setting(darkModel: .constant(false))
+        ColorTheme(darkModel: .constant(false))
             //无实际意义，仅用于画布展示
             .environmentObject(MotionManager())
     }

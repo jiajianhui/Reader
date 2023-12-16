@@ -9,15 +9,15 @@ import SwiftUI
 
 struct IAP: View {
     
-    //创建Store实体
+    //1、 创建Store实体
     @StateObject var store = Store()
     
     var body: some View {
+        //2、 依次读取已经存在的所有内购选项
         ForEach(store.allProducts, id: \.self) { product in
             if !product.isLocked {  //若购买，则显示该内容
                 Text("已解锁Pro版本")
             } else {  //若没购买，显示购买按钮（价格），恢复购买按钮
-                
                 if let price = product.price, product.isLocked {
                     HStack {
                         Button {
@@ -31,8 +31,7 @@ struct IAP: View {
                                 .padding(.horizontal, 8)
                                 .background(Color.orange.opacity(0.07).cornerRadius(100))
                         }
-                        //默认列表中一行代表一个按钮，让一行可以执行两个按钮
-                        .buttonStyle(.plain)
+                        .buttonStyle(.plain) //默认列表中一行代表一个按钮，让一行可以执行两个按钮
 
                         Spacer()
                         
@@ -48,7 +47,7 @@ struct IAP: View {
                 }
             }
         }
-        //该视图出现时，刷新内购状态
+        //3、 该视图出现时，刷新内购状态
         .onAppear {
             store.loadStoredPurchases()
         }

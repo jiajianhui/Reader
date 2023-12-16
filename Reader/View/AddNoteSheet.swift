@@ -8,7 +8,7 @@
 import SwiftUI
 import ImagePickerView  //第三方库
 
-struct AddNote: View {
+struct AddNoteSheet: View {
     
     //用户数据
     @State var titleValue = ""
@@ -144,6 +144,6 @@ struct AddNote: View {
 
 struct Sheet_Previews: PreviewProvider {
     static var previews: some View {
-        AddNote(noteData: TabNoteData())
+        AddNoteSheet(noteData: TabNoteData())
     }
 }

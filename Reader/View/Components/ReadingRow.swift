@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Row: View {
+struct ReadingRow: View {
     
     var article: Article
     
@@ -29,6 +29,6 @@ struct Row: View {
 
 struct Row_Previews: PreviewProvider {
     static var previews: some View {
-        Row(article: Article(id: 0, title: "你好", body: "世界"))
+        ReadingRow(article: Article(id: 0, title: "你好", body: "世界"))
     }
 }

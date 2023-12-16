@@ -31,13 +31,13 @@ struct ReaderApp: App {
                     Locked(authorize: authorize)
                 } else {
                     TabView {
-                        Master()
+                        Reading()
                             .environmentObject(motionManager)
                             .tabItem {
                                 Image(systemName: "list.star")
                                 Text("编辑推荐")
                             }
-                        Reading()
+                        Notes()
                             .tabItem {
                                 Image(systemName: "pencil.and.outline")
                                 Text("阅读笔记")

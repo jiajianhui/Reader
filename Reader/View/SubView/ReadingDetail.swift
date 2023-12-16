@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Detail: View {
+struct ReadingDetail: View {
     
     var article: Article
     
@@ -23,6 +23,6 @@ struct Detail: View {
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        Detail(article: Article(id: 0, title: "你好", body: "世界"))
+        ReadingDetail(article: Article(id: 0, title: "你好", body: "世界"))
     }
 }
